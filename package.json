@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install  --legacy-peer-deps",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/schema": "^8.3.9",
+    "apollo-server-core": "^3.6.7",
+    "apollo-server-express": "^3.6.7",
+    "express": "^4.17.3",
+    "graphql": "^16.3.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-ws": "^5.7.0",
+    "graphql-yoga": "^2.3.0",
+    "subscriptions-transport-ws": "^0.11.0",
+    "ws": "^8.5.0"
+  }
+}
